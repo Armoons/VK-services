@@ -11,6 +11,11 @@ class ServiceViewController: UIViewController {
     
     let serviceView = ServiceView()
     
+    func getInfo(_ data: Item) {
+        serviceView.getData(data)
+        navigationItem.title = data.name
+    }
+    
     override func loadView() {
         self.view = serviceView
     }
@@ -20,7 +25,4 @@ class ServiceViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
-
 }

@@ -19,32 +19,22 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Services"
-        
-//        UIApplication.shared.open(URL(string: "https://sferum.ru/")!)
+        navigationController?.navigationBar.tintColor = .red
 
         
+        navigationItem.title = "Services"
         self.getDate()
+
         
-        mainView.getDatesCount = { [weak self] in
-            return self?.services.count ?? 0
-        }
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
         
-        mainView.getDateForIndex = { [weak self] index in
-            return self?.services[index]
-        }
-        
-        mainView.presentService = { [weak self] data in
-            let serviceVC = ServiceViewController()
-            
-            
-        }
+//        UIApplication.shared.open(URL(string: "https://sferum.ru/")!)
 
     }
     
     func getDate() {
         Parser().getInfo { [weak self] result in
-            print(result)
             guard let self else { return }
             
             switch result {
@@ -56,4 +46,43 @@ class MainViewController: UIViewController {
             }
         }
     }
+}
+
+extension MainViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let info = services[indexPath.row]
+        let serviceVC = ServiceViewController()
+        serviceVC.getInfo(info)
+        self.navigationController?.pushViewController(serviceVC, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+}
+
+extension MainViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.services.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = services[indexPath.row]
+        print(model.name)
+        print(model.iconURL)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.cellID, for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
+        
+        cell.name.text = model.name
+        cell.logoIV.loadFrom(urlString: model.iconURL)
+        
+        return cell
+    }
+    
+    
 }
