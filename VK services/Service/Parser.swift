@@ -37,37 +37,4 @@ class Parser {
             }
         }.resume()
     }
-    
-//    func getImageFromURL(urlString: String) -> UIImage {
-//        if let url = URL(string: urlString) {
-//            let task = URLSession.shared.dataTask(with: url) { data, response, error in
-//                guard let data = data, error == nil else { return }
-//
-//                DispatchQueue.main.async {
-//                    return UIImage(data: data)
-//                }
-//            }
-//
-//            task.resume()
-//        }
-//
-//    }
-    
-    
-}
-
-extension UIImageView {
-    func loadFrom(URLAddress: String) {
-        guard let url = URL(string: URLAddress) else {
-            return
-        }
-        
-        DispatchQueue.main.async { [weak self] in
-            if let imageData = try? Data(contentsOf: url) {
-                if let loadedImage = UIImage(data: imageData) {
-                        self?.image = loadedImage
-                }
-            }
-        }
-    }
 }

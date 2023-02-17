@@ -19,6 +19,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Services"
+        
+//        UIApplication.shared.open(URL(string: "https://sferum.ru/")!)
+
+        
         self.getDate()
         
         mainView.getDatesCount = { [weak self] in
@@ -27,6 +32,12 @@ class MainViewController: UIViewController {
         
         mainView.getDateForIndex = { [weak self] index in
             return self?.services[index]
+        }
+        
+        mainView.presentService = { [weak self] data in
+            let serviceVC = ServiceViewController()
+            
+            
         }
 
     }
@@ -45,6 +56,4 @@ class MainViewController: UIViewController {
             }
         }
     }
-   
-
 }
