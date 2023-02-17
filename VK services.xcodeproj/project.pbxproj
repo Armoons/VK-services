@@ -12,13 +12,13 @@
 		83E2ED47ADA499034F5B3E56 /* Pods_VK_services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF5BCACCA1F6538EE67A751 /* Pods_VK_services.framework */; };
 		AE440B67299FA49400026E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B66299FA49400026E6C /* AppDelegate.swift */; };
 		AE440B69299FA49400026E6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B68299FA49400026E6C /* SceneDelegate.swift */; };
-		AE440B6B299FA49400026E6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B6A299FA49400026E6C /* ViewController.swift */; };
-		AE440B6E299FA49400026E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE440B6C299FA49400026E6C /* Main.storyboard */; };
 		AE440B70299FA49500026E6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE440B6F299FA49500026E6C /* Assets.xcassets */; };
 		AE440B73299FA49500026E6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE440B71299FA49500026E6C /* LaunchScreen.storyboard */; };
 		AE440B7E299FA49600026E6C /* VK_servicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B7D299FA49600026E6C /* VK_servicesTests.swift */; };
 		AE440B88299FA49600026E6C /* VK_servicesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B87299FA49600026E6C /* VK_servicesUITests.swift */; };
 		AE440B8A299FA49600026E6C /* VK_servicesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B89299FA49600026E6C /* VK_servicesUITestsLaunchTests.swift */; };
+		AE440B97299FAB3A00026E6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B96299FAB3A00026E6C /* MainViewController.swift */; };
+		AE440B99299FAB5000026E6C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B98299FAB5000026E6C /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,6 @@
 		AE440B63299FA49400026E6C /* VK services.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK services.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE440B66299FA49400026E6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE440B68299FA49400026E6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AE440B6A299FA49400026E6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AE440B6D299FA49400026E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE440B6F299FA49500026E6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE440B72299FA49500026E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE440B74299FA49500026E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +55,8 @@
 		AE440B83299FA49600026E6C /* VK servicesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VK servicesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE440B87299FA49600026E6C /* VK_servicesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_servicesUITests.swift; sourceTree = "<group>"; };
 		AE440B89299FA49600026E6C /* VK_servicesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_servicesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AE440B96299FAB3A00026E6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AE440B98299FAB5000026E6C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B683582B3B0B676C281AAD39 /* Pods-VK services-VK servicesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK services-VK servicesUITests.release.xcconfig"; path = "Target Support Files/Pods-VK services-VK servicesUITests/Pods-VK services-VK servicesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B878912EFC3CE5ECF509B96E /* Pods_VK_services_VK_servicesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VK_services_VK_servicesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB63C9A4543DE55DF6617048 /* Pods-VK services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK services.debug.xcconfig"; path = "Target Support Files/Pods-VK services/Pods-VK services.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +111,6 @@
 				7954DF2F9A12CCD1A11E83D2 /* Pods-VK servicesTests.debug.xcconfig */,
 				1471B9C7F6FC40324CCD83D3 /* Pods-VK servicesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,8 +141,7 @@
 			children = (
 				AE440B66299FA49400026E6C /* AppDelegate.swift */,
 				AE440B68299FA49400026E6C /* SceneDelegate.swift */,
-				AE440B6A299FA49400026E6C /* ViewController.swift */,
-				AE440B6C299FA49400026E6C /* Main.storyboard */,
+				AE440B9A299FAC6800026E6C /* VC&V */,
 				AE440B6F299FA49500026E6C /* Assets.xcassets */,
 				AE440B71299FA49500026E6C /* LaunchScreen.storyboard */,
 				AE440B74299FA49500026E6C /* Info.plist */,
@@ -166,6 +164,23 @@
 				AE440B89299FA49600026E6C /* VK_servicesUITestsLaunchTests.swift */,
 			);
 			path = "VK servicesUITests";
+			sourceTree = "<group>";
+		};
+		AE440B9A299FAC6800026E6C /* VC&V */ = {
+			isa = PBXGroup;
+			children = (
+				AE440B9B299FAC7100026E6C /* Main */,
+			);
+			path = "VC&V";
+			sourceTree = "<group>";
+		};
+		AE440B9B299FAC7100026E6C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AE440B96299FAB3A00026E6C /* MainViewController.swift */,
+				AE440B98299FAB5000026E6C /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +294,6 @@
 			files = (
 				AE440B73299FA49500026E6C /* LaunchScreen.storyboard in Resources */,
 				AE440B70299FA49500026E6C /* Assets.xcassets in Resources */,
-				AE440B6E299FA49400026E6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +421,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE440B6B299FA49400026E6C /* ViewController.swift in Sources */,
+				AE440B97299FAB3A00026E6C /* MainViewController.swift in Sources */,
+				AE440B99299FAB5000026E6C /* MainView.swift in Sources */,
 				AE440B67299FA49400026E6C /* AppDelegate.swift in Sources */,
 				AE440B69299FA49400026E6C /* SceneDelegate.swift in Sources */,
 			);
@@ -446,14 +461,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AE440B6C299FA49400026E6C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE440B6D299FA49400026E6C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AE440B71299FA49500026E6C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -515,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -569,7 +576,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -592,7 +599,9 @@
 				INFOPLIST_FILE = "VK services/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -621,7 +630,9 @@
 				INFOPLIST_FILE = "VK services/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
