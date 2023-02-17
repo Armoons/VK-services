@@ -6,15 +6,15 @@
 //
 
 import Foundation
-import UIKit
 
 class Parser {
     typealias ResultCompletion = (Result<[Item], Error>) -> ()
     private static let url = URL(string: "https://mobile-olympiad-trajectory.hb.bizmrg.com/semi-final-data.json")
-
     
     func getInfo(completion: @escaping ResultCompletion) {
-        guard let url = Self.url else { return }
+        guard let url = Self.url else {
+            return
+        }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -23,7 +23,9 @@ class Parser {
                 }
                 return
             }
-            guard let data = data else { return }
+            guard let data = data else {
+                return
+            }
             
             do {
                 let userInfo = try JSONDecoder().decode(Services.self, from: data)

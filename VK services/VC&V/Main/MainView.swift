@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class MainView: UIView {
-
     let tableView: UITableView = {
         let tv = UITableView()
         tv.register(UINib(nibName: MainTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: MainTableViewCell.cellID)
@@ -19,9 +18,7 @@ class MainView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-//        tableView.delegate = self
-//        tableView.dataSource = self
+
         setupUI()
     }
     
@@ -40,5 +37,4 @@ class MainView: UIView {
     func updateTable() {
         tableView.reloadData()
     }
-
 }

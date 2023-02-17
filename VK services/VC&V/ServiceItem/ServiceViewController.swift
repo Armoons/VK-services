@@ -11,18 +11,14 @@ class ServiceViewController: UIViewController {
     
     let serviceView = ServiceView()
     
-    func getInfo(_ data: Item) {
-        serviceView.getData(data)
-        navigationItem.title = data.name
-    }
+    // MARK: - ViewController lifecycle methods
     
     override func loadView() {
         self.view = serviceView
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    func getInfo(_ data: Item) {
+        serviceView.getData(data)
+        navigationItem.title = data.name
     }
 }

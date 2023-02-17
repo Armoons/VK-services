@@ -37,7 +37,6 @@ class ServiceView: UIView {
     
     private var urlLabel: UILabel = {
         let label = UILabel()
-//        label.text = "ссылка"
         label.font = UIFont.systemFont(ofSize: 28)
         label.textColor = .black
         label.isUserInteractionEnabled = true
@@ -52,7 +51,6 @@ class ServiceView: UIView {
         super.init(frame: frame)
         
         self.backgroundColor = .white
-     
         setupUI()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(titleTapped))
@@ -64,7 +62,9 @@ class ServiceView: UIView {
     }
     
     @objc func titleTapped() {
-        guard let url = URL(string: serviceInfo?.serviceURL ?? "") else { return }
+        guard let url = URL(string: serviceInfo?.serviceURL ?? "") else {
+            return
+        }
         UIApplication.shared.open(url)
     }
     
@@ -83,7 +83,6 @@ class ServiceView: UIView {
     }
     
     func setupUI() {
-        
         for view in [logoIV, nameLabel, descriptionLabel, urlLabel] {
             self.addSubview(view)
         }
@@ -99,7 +98,6 @@ class ServiceView: UIView {
             $0.top.equalTo(logoIV.snp.bottom).inset(-18)
             $0.leading.equalToSuperview().inset(18)
             $0.trailing.equalToSuperview().inset(18)
-//            $0.centerX.equalToSuperview()
         }
         
         descriptionLabel.snp.makeConstraints {
@@ -112,6 +110,5 @@ class ServiceView: UIView {
             $0.top.equalTo(descriptionLabel.snp.bottom).inset(-18)
             $0.centerX.equalToSuperview()
         }
-        
     }
 }
