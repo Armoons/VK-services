@@ -21,6 +21,8 @@
 		AE440B99299FAB5000026E6C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B98299FAB5000026E6C /* MainView.swift */; };
 		AE440B9F299FAE4500026E6C /* ServicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B9E299FAE4500026E6C /* ServicesModel.swift */; };
 		AE440BA1299FAE7600026E6C /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440BA0299FAE7600026E6C /* Parser.swift */; };
+		AE440BA4299FB4CE00026E6C /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440BA2299FB4CE00026E6C /* MainTableViewCell.swift */; };
+		AE440BA5299FB4CE00026E6C /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE440BA3299FB4CE00026E6C /* MainTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		AE440B98299FAB5000026E6C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AE440B9E299FAE4500026E6C /* ServicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesModel.swift; sourceTree = "<group>"; };
 		AE440BA0299FAE7600026E6C /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		AE440BA2299FB4CE00026E6C /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		AE440BA3299FB4CE00026E6C /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		B683582B3B0B676C281AAD39 /* Pods-VK services-VK servicesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK services-VK servicesUITests.release.xcconfig"; path = "Target Support Files/Pods-VK services-VK servicesUITests/Pods-VK services-VK servicesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B878912EFC3CE5ECF509B96E /* Pods_VK_services_VK_servicesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VK_services_VK_servicesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB63C9A4543DE55DF6617048 /* Pods-VK services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VK services.debug.xcconfig"; path = "Target Support Files/Pods-VK services/Pods-VK services.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,8 +189,18 @@
 			children = (
 				AE440B96299FAB3A00026E6C /* MainViewController.swift */,
 				AE440B98299FAB5000026E6C /* MainView.swift */,
+				AE440BA6299FB4D400026E6C /* TableCell */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		AE440BA6299FB4D400026E6C /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				AE440BA2299FB4CE00026E6C /* MainTableViewCell.swift */,
+				AE440BA3299FB4CE00026E6C /* MainTableViewCell.xib */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE440BA5299FB4CE00026E6C /* MainTableViewCell.xib in Resources */,
 				AE440B73299FA49500026E6C /* LaunchScreen.storyboard in Resources */,
 				AE440B70299FA49500026E6C /* Assets.xcassets in Resources */,
 			);
@@ -430,6 +445,7 @@
 				AE440B97299FAB3A00026E6C /* MainViewController.swift in Sources */,
 				AE440B9F299FAE4500026E6C /* ServicesModel.swift in Sources */,
 				AE440BA1299FAE7600026E6C /* Parser.swift in Sources */,
+				AE440BA4299FB4CE00026E6C /* MainTableViewCell.swift in Sources */,
 				AE440B99299FAB5000026E6C /* MainView.swift in Sources */,
 				AE440B67299FA49400026E6C /* AppDelegate.swift in Sources */,
 				AE440B69299FA49400026E6C /* SceneDelegate.swift in Sources */,

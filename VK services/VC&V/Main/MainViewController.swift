@@ -10,6 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     let mainView = MainView()
+    var services: [Item] = []
     
     override func loadView() {
         self.view = mainView
@@ -18,11 +19,31 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Parser().getInfo { [weak self] result in
-            print(result)
+        self.getDate()
+        
+        mainView.getDatesCount = { [weak self] in
+            return self?.services.count ?? 0
+        }
+        
+        mainView.getDateForIndex = { [weak self] index in
+            return self?.services[index]
         }
 
-        // Do any additional setup after loading the view.
+    }
+    
+    func getDate() {
+        Parser().getInfo { [weak self] result in
+            print(result)
+            guard let self else { return }
+            
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let data):
+                self.services = data
+                self.mainView.updateTable()
+            }
+        }
     }
    
 
