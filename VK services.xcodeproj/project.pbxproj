@@ -158,9 +158,8 @@
 				AE440BAA299FC05800026E6C /* XcodeDelegates */,
 				AE440BAB299FC08900026E6C /* Service */,
 				AE440B9A299FAC6800026E6C /* VC&V */,
-				AE440B6F299FA49500026E6C /* Assets.xcassets */,
-				AE440B71299FA49500026E6C /* LaunchScreen.storyboard */,
-				AE440B74299FA49500026E6C /* Info.plist */,
+				AEDE629629A0F2AE00B78E97 /* Resource */,
+				AEDE629729A0F2B600B78E97 /* Plist */,
 				AE440BA7299FBF3200026E6C /* Extension */,
 			);
 			path = "VK services";
@@ -245,6 +244,23 @@
 				AE440BAE299FC22D00026E6C /* ServiceView.swift */,
 			);
 			path = ServiceItem;
+			sourceTree = "<group>";
+		};
+		AEDE629629A0F2AE00B78E97 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AE440B6F299FA49500026E6C /* Assets.xcassets */,
+				AE440B71299FA49500026E6C /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AEDE629729A0F2B600B78E97 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				AE440B74299FA49500026E6C /* Info.plist */,
+			);
+			path = Plist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
