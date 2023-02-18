@@ -29,22 +29,30 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .red
         navigationItem.title = "Services"
         
+        mainView.refreshControl.addTarget(self, action: #selector(refreshTable(sender:)), for: .valueChanged)
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
+    }
+    
+    @objc func refreshTable(sender: UIRefreshControl) {
+        self.getDate()
+        sender.endRefreshing()
     }
     
     // MARK: - Private Methods
     
     private func getDate() {
+        
         serviceProvider.getInfo { [weak self] result in
             guard let self else {
                 return
             }
-            
+                        
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
             case .success(let data):
+                ImageProvider.shared.imageCache.removeAllObjects()
                 self.services = data.items
                 self.mainView.updateTable()
             }
@@ -83,8 +91,11 @@ extension MainViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         cell.name.text = model.name
-        cell.logoIV.loadFrom(urlString: model.iconURL)
-        
+        if let url = URL(string: model.iconURL) {
+            ImageProvider.shared.downloadImage(url: url) { image in
+                cell.logoIV.image = image
+            }
+        }
         return cell
     }    
 }

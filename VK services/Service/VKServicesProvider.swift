@@ -31,7 +31,6 @@ class VKServicesProvider {
                     self.getInfo(completion: completion)
                 } else {
                     DispatchQueue.main.async {
-                        
                         completion(.failure(error))
                     }
                 }

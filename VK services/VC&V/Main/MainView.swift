@@ -19,6 +19,8 @@ class MainView: UIView {
         return tv
     }()
     
+    let refreshControl = UIRefreshControl()
+    
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -35,6 +37,8 @@ class MainView: UIView {
 
     private func setupUI() {
         self.addSubview(tableView)
+        
+        tableView.refreshControl = refreshControl
         
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()

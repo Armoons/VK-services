@@ -71,7 +71,10 @@ class ServiceView: UIView {
         guard let url = URL(string: serviceInfo?.serviceURL ?? "") else {
             return
         }
-        UIApplication.shared.open(url)
+        
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
     }
     
     func getData(_ data: VKServiceItem) {
@@ -84,7 +87,11 @@ class ServiceView: UIView {
     private func setupContent() {
         if let data = serviceInfo {
             self.nameLabel.text = data.name
-            self.logoIV.loadFrom(urlString: data.iconURL)
+            if let url = URL(string: data.iconURL) {
+                ImageProvider.shared.downloadImage(url: url) { image in
+                    self.logoIV.image = image
+                }
+            }
             self.descriptionLabel.text = data.description
             self.urlForOpen = data.serviceURL
         }
