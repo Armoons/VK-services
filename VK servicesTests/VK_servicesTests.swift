@@ -9,28 +9,45 @@ import XCTest
 @testable import VK_services
 
 final class VK_servicesTests: XCTestCase {
+    
+    private var serviceProvider: VKServicesProvider!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        
+        serviceProvider = VKServicesProvider()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        serviceProvider = nil
+        
+        try super.tearDownWithError()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testResponse() {
+        let expectation = expectation(description: "Expectation")
+        
+        serviceProvider.getInfo { result in
+            switch result {
+            case let .success(data):
+                let responseNames = data.items.map(\.name)
+                print(data.items.map(\.serviceURL))
+                let successResultNames = [
+                    "ВКонтакте",
+                    "Одноклассники",
+                    "Сферум",
+                    "GeekBrains",
+                    "SkillFactory",
+                    "Почта",
+                    "Облако",
+                    "Календарь"
+                ]
+                XCTAssertEqual(responseNames, successResultNames)
+            case let .failure(error):
+                print(error)
+            }
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 5)
     }
-
 }

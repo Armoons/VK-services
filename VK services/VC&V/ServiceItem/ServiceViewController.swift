@@ -21,7 +21,7 @@ class ServiceViewController: UIViewController {
     
     // MARK: - Public Methods
     
-    func getInfo(_ data: Item) {
+    func getInfo(_ data: VKServiceItem) {
         serviceView.getData(data)
         navigationItem.title = data.name
     }

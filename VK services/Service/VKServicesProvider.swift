@@ -7,11 +7,11 @@
 
 import Foundation
 
-class Parser {
+class VKServicesProvider {
     
     // MARK: - Types
 
-    typealias ResultCompletion = (Result<[Item], Error>) -> ()
+    typealias ResultCompletion = (Result<VKServicesResponseData, Error>) -> ()
     
     // MARK: - Static Properties
 
@@ -23,22 +23,28 @@ class Parser {
         guard let url = Self.url else {
             return
         }
-        
+        var retryCount = 5
         URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
+            if let error {
+                retryCount -= 1
+                if retryCount > 0 {
+                    self.getInfo(completion: completion)
+                } else {
+                    DispatchQueue.main.async {
+                        
+                        completion(.failure(error))
+                    }
                 }
                 return
             }
-            guard let data = data else {
+            guard let data else {
                 return
             }
             
             do {
-                let userInfo = try JSONDecoder().decode(Services.self, from: data)
+                let response = try JSONDecoder().decode(VKServicesResponseData.self, from: data)
                 DispatchQueue.main.async {
-                    completion(.success(userInfo.items))
+                    completion(.success(response))
                 }
             }  catch {
                 DispatchQueue.main.async {

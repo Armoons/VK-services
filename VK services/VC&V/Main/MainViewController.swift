@@ -12,7 +12,8 @@ class MainViewController: UIViewController {
     // MARK: - Private Properties
 
     private let mainView = MainView()
-    private var services: [Item] = []
+    private var services: [VKServiceItem] = []
+    private let serviceProvider = VKServicesProvider()
     
     // MARK: - Life Cycle
     
@@ -35,7 +36,7 @@ class MainViewController: UIViewController {
     // MARK: - Private Methods
     
     private func getDate() {
-        Parser().getInfo { [weak self] result in
+        serviceProvider.getInfo { [weak self] result in
             guard let self else {
                 return
             }
@@ -44,7 +45,7 @@ class MainViewController: UIViewController {
             case .failure(let error):
                 print(error.localizedDescription)
             case .success(let data):
-                self.services = data
+                self.services = data.items
                 self.mainView.updateTable()
             }
         }

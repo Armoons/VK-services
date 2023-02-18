@@ -11,7 +11,7 @@ class ServiceView: UIView {
     
     // MARK: - Private Properties
     
-    private var serviceInfo: Item?
+    private var serviceInfo: VKServiceItem?
     
     private var urlForOpen: String?
     
@@ -74,7 +74,7 @@ class ServiceView: UIView {
         UIApplication.shared.open(url)
     }
     
-    func getData(_ data: Item) {
+    func getData(_ data: VKServiceItem) {
         self.serviceInfo = data
         setupContent()
     }

@@ -19,8 +19,8 @@
 		AE440B8A299FA49600026E6C /* VK_servicesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B89299FA49600026E6C /* VK_servicesUITestsLaunchTests.swift */; };
 		AE440B97299FAB3A00026E6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B96299FAB3A00026E6C /* MainViewController.swift */; };
 		AE440B99299FAB5000026E6C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B98299FAB5000026E6C /* MainView.swift */; };
-		AE440B9F299FAE4500026E6C /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B9E299FAE4500026E6C /* ServiceModel.swift */; };
-		AE440BA1299FAE7600026E6C /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440BA0299FAE7600026E6C /* Parser.swift */; };
+		AE440B9F299FAE4500026E6C /* VKServicesResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440B9E299FAE4500026E6C /* VKServicesResponseData.swift */; };
+		AE440BA1299FAE7600026E6C /* VKServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440BA0299FAE7600026E6C /* VKServicesProvider.swift */; };
 		AE440BA4299FB4CE00026E6C /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440BA2299FB4CE00026E6C /* MainTableViewCell.swift */; };
 		AE440BA5299FB4CE00026E6C /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE440BA3299FB4CE00026E6C /* MainTableViewCell.xib */; };
 		AE440BA9299FBF4800026E6C /* ImageView+Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = AE440BA8299FBF4800026E6C /* ImageView+Ext..swift */; };
@@ -64,8 +64,8 @@
 		AE440B89299FA49600026E6C /* VK_servicesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_servicesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AE440B96299FAB3A00026E6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AE440B98299FAB5000026E6C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		AE440B9E299FAE4500026E6C /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
-		AE440BA0299FAE7600026E6C /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		AE440B9E299FAE4500026E6C /* VKServicesResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKServicesResponseData.swift; sourceTree = "<group>"; };
+		AE440BA0299FAE7600026E6C /* VKServicesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKServicesProvider.swift; sourceTree = "<group>"; };
 		AE440BA2299FB4CE00026E6C /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		AE440BA3299FB4CE00026E6C /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		AE440BA8299FBF4800026E6C /* ImageView+Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Ext..swift"; sourceTree = "<group>"; };
@@ -229,8 +229,8 @@
 		AE440BAB299FC08900026E6C /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AE440B9E299FAE4500026E6C /* ServiceModel.swift */,
-				AE440BA0299FAE7600026E6C /* Parser.swift */,
+				AE440B9E299FAE4500026E6C /* VKServicesResponseData.swift */,
+				AE440BA0299FAE7600026E6C /* VKServicesProvider.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -378,7 +378,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		2CBFA147AD7FDA56B1503C1B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -485,8 +485,8 @@
 			files = (
 				AE440BAF299FC22D00026E6C /* ServiceView.swift in Sources */,
 				AE440B97299FAB3A00026E6C /* MainViewController.swift in Sources */,
-				AE440B9F299FAE4500026E6C /* ServiceModel.swift in Sources */,
-				AE440BA1299FAE7600026E6C /* Parser.swift in Sources */,
+				AE440B9F299FAE4500026E6C /* VKServicesResponseData.swift in Sources */,
+				AE440BA1299FAE7600026E6C /* VKServicesProvider.swift in Sources */,
 				AE440BA4299FB4CE00026E6C /* MainTableViewCell.swift in Sources */,
 				AE440B99299FAB5000026E6C /* MainView.swift in Sources */,
 				AE440B67299FA49400026E6C /* AppDelegate.swift in Sources */,
@@ -670,8 +670,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -701,8 +700,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

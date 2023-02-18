@@ -1,16 +1,18 @@
 //
-//  ServicesModel.swift
+//  VKServicesResponseData.swift
 //  VK services
 //
 //  Created by Stepanyan Arman  on 17.02.2023.
 //
 
 
-struct Services: Codable {
-    let items: [Item]
+struct VKServicesResponseData: Codable {
+    
+    let items: [VKServiceItem]
 }
 
-struct Item: Codable {
+struct VKServiceItem: Codable {
+    
     let name: String
     let description: String
     let iconURL: String
