@@ -9,7 +9,11 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
     
+    // MARK: - Static Properties
+    
     static let cellID = "MainTableViewCell"
+    
+    // MARK: - XIB Properties
 
     @IBOutlet weak var logoIV: UIImageView!
     @IBOutlet weak var name: UILabel!

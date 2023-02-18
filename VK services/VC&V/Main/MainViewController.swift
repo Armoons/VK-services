@@ -8,10 +8,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    let mainView = MainView()
-    var services: [Item] = []
     
-    // MARK: - ViewController lifecycle methods
+    // MARK: - Private Properties
+
+    private let mainView = MainView()
+    private var services: [Item] = []
+    
+    // MARK: - Life Cycle
+    
     override func loadView() {
         self.view = mainView
     }
@@ -19,16 +23,18 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getDate()
+        
         navigationController?.navigationBar.tintColor = .red
         navigationItem.title = "Services"
         
-        self.getDate()
-
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
     }
     
-    func getDate() {
+    // MARK: - Private Methods
+    
+    private func getDate() {
         Parser().getInfo { [weak self] result in
             guard let self else {
                 return
@@ -46,7 +52,9 @@ class MainViewController: UIViewController {
 }
 
     // MARK: - UITableViewDelegate
+
 extension MainViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
@@ -60,8 +68,10 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - UITableViewDataSource
+    // MARK: - UITableViewDataSource
+
 extension MainViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.services.count
     }

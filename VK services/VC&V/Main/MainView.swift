@@ -9,12 +9,17 @@ import UIKit
 import SnapKit
 
 class MainView: UIView {
+    
+    // MARK: - Public Properties
+
     let tableView: UITableView = {
         let tv = UITableView()
         tv.register(UINib(nibName: MainTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: MainTableViewCell.cellID)
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
+    
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,7 +31,9 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUI() {
+    // MARK: - Private Methods
+
+    private func setupUI() {
         self.addSubview(tableView)
         
         tableView.snp.makeConstraints {
@@ -34,6 +41,8 @@ class MainView: UIView {
         }
     }
     
+    // MARK: - Public Methods
+
     func updateTable() {
         tableView.reloadData()
     }

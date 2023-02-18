@@ -9,7 +9,9 @@ import UIKit
 
 class ServiceView: UIView {
     
-    var serviceInfo: Item?
+    // MARK: - Private Properties
+    
+    private var serviceInfo: Item?
     
     private var urlForOpen: String?
     
@@ -46,6 +48,8 @@ class ServiceView: UIView {
         label.attributedText = underlineAttributedString
         return label
     }()
+    
+    // MARK: - Initialization
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,6 +65,8 @@ class ServiceView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public Methods
+    
     @objc func titleTapped() {
         guard let url = URL(string: serviceInfo?.serviceURL ?? "") else {
             return
@@ -73,7 +79,9 @@ class ServiceView: UIView {
         setupContent()
     }
     
-    func setupContent() {
+    // MARK: - Private Methods
+
+    private func setupContent() {
         if let data = serviceInfo {
             self.nameLabel.text = data.name
             self.logoIV.loadFrom(urlString: data.iconURL)
@@ -82,7 +90,7 @@ class ServiceView: UIView {
         }
     }
     
-    func setupUI() {
+    private func setupUI() {
         for view in [logoIV, nameLabel, descriptionLabel, urlLabel] {
             self.addSubview(view)
         }

@@ -8,8 +8,16 @@
 import Foundation
 
 class Parser {
+    
+    // MARK: - Types
+
     typealias ResultCompletion = (Result<[Item], Error>) -> ()
+    
+    // MARK: - Static Properties
+
     private static let url = URL(string: "https://mobile-olympiad-trajectory.hb.bizmrg.com/semi-final-data.json")
+    
+    // MARK: - Public Methods
     
     func getInfo(completion: @escaping ResultCompletion) {
         guard let url = Self.url else {

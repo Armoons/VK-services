@@ -9,13 +9,17 @@ import UIKit
 
 class ServiceViewController: UIViewController {
     
-    let serviceView = ServiceView()
+    // MARK: - Private Properties
+
+    private let serviceView = ServiceView()
     
     // MARK: - ViewController lifecycle methods
     
     override func loadView() {
         self.view = serviceView
     }
+    
+    // MARK: - Public Methods
     
     func getInfo(_ data: Item) {
         serviceView.getData(data)
